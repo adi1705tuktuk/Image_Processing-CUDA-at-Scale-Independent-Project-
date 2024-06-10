@@ -1,20 +1,38 @@
-NVCC = /usr/local/cuda/bin/nvcc
+# Makefile for CUDA-based image processing
+
+# Compiler and flags
 CXX = g++
+NVCC = nvcc
 CXXFLAGS = -I/usr/local/include/opencv4 -I/Users/adityaprasad/Desktop/image_processing/include
-LDFLAGS = -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_imgproc
+LDFLAGS = -L/usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs
 
-all: edge_detection
+# Directories
+SRC_DIR = src
+INCLUDE_DIR = include
+BUILD_DIR = build
+BIN_DIR = bin
 
-edge_detection: main.o edge_detection.o
-	$(NVCC) -o edge_detection main.o edge_detection.o $(LDFLAGS)
+# Source files
+SOURCES = $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(SRC_DIR)/*.cu)
+OBJECTS = $(SOURCES:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
+OBJECTS += $(SOURCES:$(SRC_DIR)/%.cu=$(BUILD_DIR)/%.o)
 
-main.o: src/main.cpp include/edge_detection.h
-	$(CXX) $(CXXFLAGS) -c src/main.cpp
+# Executable
+EXECUTABLE = $(BIN_DIR)/image_processing
 
-edge_detection.o: src/edge_detection.cu include/edge_detection.h
-	$(NVCC) -c src/edge_detection.cu
+# Targets
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CXX) $(OBJECTS) -o $@ $(LDFLAGS)
+
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cu
+	$(NVCC) $(CXXFLAGS) -c $< -o $@
+
+.PHONY: clean
 
 clean:
-	rm -f *.o edge_detection
-
-
+	rm -rf $(BUILD_DIR)/*.o $(EXECUTABLE)

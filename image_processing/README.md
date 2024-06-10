@@ -94,3 +94,32 @@ The project focuses on performing clustering analysis on a dataset using two dif
 ## Significance of the Work
 
 The project demonstrates a comprehensive application of clustering techniques on a real dataset, showcasing the practical considerations in clustering analysis. The comparative study of K-Means and Agglomerative Clustering algorithms highlights their strengths and weaknesses, providing valuable insights into their applicability for different types of data. By exploring various evaluation metrics and parameter tuning methods, the project contributes to a deeper understanding of effective clustering practices, which is significant for tasks such as market segmentation, image segmentation, and anomaly detection in various fields.
+
+## Proof of Execution Artifacts
+
+### INPUT FOLDER
+<img width="660" alt="image" src="https://github.com/adi1705tuktuk/Image_Processing-CUDA-at-Scale-Independent-Project-/assets/125470718/c23b8bb0-77c1-4f35-9631-a3cc552cf98b">
+
+### SAMPLE INPUT IMAGE
+![image](https://github.com/adi1705tuktuk/Image_Processing-CUDA-at-Scale-Independent-Project-/assets/125470718/39f0fd27-e47f-49b8-baef-dc0d9db6a507)
+
+
+
+### OUTPUT FOLDER
+<img width="1223" alt="image" src="https://github.com/adi1705tuktuk/Image_Processing-CUDA-at-Scale-Independent-Project-/assets/125470718/0f24b6a6-4b79-4ea8-8246-9fd559a70681">
+
+### DILATION
+![image](https://github.com/adi1705tuktuk/Image_Processing-CUDA-at-Scale-Independent-Project-/assets/125470718/15f7a6ce-87cf-48c3-9425-f63aab206cd1)
+
+### CANNING EDGE
+![image](https://github.com/adi1705tuktuk/Image_Processing-CUDA-at-Scale-Independent-Project-/assets/125470718/ba5e597a-6848-491c-82b1-2d3cfceb45f4)
+
+### EROSION
+![image](https://github.com/adi1705tuktuk/Image_Processing-CUDA-at-Scale-Independent-Project-/assets/125470718/936f2983-c9e7-42bb-bd8c-89bda285dd6e)
+
+### HISTOGRAM EQUALIZATION
+![image](https://github.com/adi1705tuktuk/Image_Processing-CUDA-at-Scale-Independent-Project-/assets/125470718/3e33fd1c-2bae-4b9d-81ac-ca2c9e58abc1)
+
+### SOBEL FILTER
+![image](https://github.com/adi1705tuktuk/Image_Processing-CUDA-at-Scale-Independent-Project-/assets/125470718/49967d47-8482-47a4-8b7d-f3e9844b1879)
+
